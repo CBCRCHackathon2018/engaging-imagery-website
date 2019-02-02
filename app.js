@@ -114,6 +114,7 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  * Primary app routes.
  */
 app.get('/', homeController.escapeVelocity);
+app.get('/:userid', homeController.escapeVelocity);
 
 /**
  * Error Handler.
