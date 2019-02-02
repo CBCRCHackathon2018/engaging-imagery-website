@@ -7,3 +7,9 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+exports.escapeVelocity = (req, res) => {
+  res.render('engaging-imagery', {
+    title: 'Landing Page'
+  });
+};
