@@ -101,7 +101,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use((req, res, next) => {
-  console.log('Something is happening.');
+  //console.log('Something is happening.');
   next();
 });
 app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
@@ -114,7 +114,7 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  * Primary app routes.
  */
 app.get('/', homeController.escapeVelocity);
-app.get('/:userid', homeController.escapeVelocity);
+app.get('/:userId', homeController.escapeVelocity);
 
 /**
  * Error Handler.
