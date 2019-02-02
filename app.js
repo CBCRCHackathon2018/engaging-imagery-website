@@ -19,6 +19,7 @@ const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
+var router = express.Router();
 
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
@@ -31,7 +32,6 @@ dotenv.load({ path: '.env.example' });
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
-const apiController = require('./controllers/api');
 
 /**
  * API keys and Passport configuration.
@@ -101,18 +101,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use((req, res, next) => {
-  // After successful login, redirect back to the intended page
-  console.log("we used this man");
-  if (!req.user
-    && req.path !== '/login'
-    && req.path !== '/signup'
-    && !req.path.match(/^\/auth/)
-    && !req.path.match(/\./)) {
-    req.session.returnTo = req.originalUrl;
-  } else if (req.user
-    && (req.path === '/account' || req.path.match(/^\/api/))) {
-    req.session.returnTo = req.originalUrl;
-  }
+  console.log('Something is happening.');
   next();
 });
 app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
@@ -125,12 +114,6 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  * Primary app routes.
  */
 app.get('/', homeController.escapeVelocity);
-app.get("/index", homeController.index)
-
-/**
- * API examples routes.
- */
-app.get('/api', apiController.getApi);
 
 /**
  * Error Handler.

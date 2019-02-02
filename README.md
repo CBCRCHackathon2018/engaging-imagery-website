@@ -1,5 +1,5 @@
 ![](https://github.com/CBCRCHackathon2018/Registration-Slides/blob/master/01.jpg?raw=true)
-CBC Radio Canada - Engaging Images
+CBC Radio Canada - Engaging Imagery
 =======================
 
 We create a profile to users based on their previous readdata and use it choose more engaging imagery for the Radio Canada content they will view.
