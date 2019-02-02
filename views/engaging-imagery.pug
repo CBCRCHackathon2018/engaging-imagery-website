@@ -47,48 +47,14 @@ head
   #main
     // One
     section#one.tiles
-      article
-        span.image
-          img(src='images/pic01.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Aliquam
-          p Ipsum dolor sit amet
-      article
-        span.image
-          img(src='images/pic02.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Tempus
-          p feugiat amet tempus
-      article
-        span.image
-          img(src='images/pic03.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Magna
-          p Lorem etiam nullam
-      article
-        span.image
-          img(src='images/pic04.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Ipsum
-          p Nisl sed aliquam
-      article
-        span.image
-          img(src='images/pic05.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Consequat
-          p Ipsum dolor sit amet
-      article
-        span.image
-          img(src='images/pic06.jpg' alt='')
-        header.major
-          h3
-            a.link(href='landing.html') Etiam
-          p Feugiat amet tempus
+      each val, index in data
+        article
+          span.image
+            img(src=val.image alt='')
+          header.major
+            h3
+              a.link(href='landing.html')= val.title
+            p= val.description
     // Two
     section#two
       .inner
