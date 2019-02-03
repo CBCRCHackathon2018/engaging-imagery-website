@@ -24,12 +24,12 @@ $color-text: black;
 
 // content colour vars 
 $color-contentbg-text: #FFF;
-$color-contentbg-1: #6fc3df;
-$color-contentbg-2: #8d82c4;
-$color-contentbg-3: #87c5a4;
-$color-contentbg-4: #8ea9e8;
-$color-contentbg-5: #e7b788;
-$color-contentbg-6: #ec8d81;
+$color-contentbg-1: #247F9E;
+$color-contentbg-2: #786AB9; 
+$color-contentbg-3: #4EA274;
+$color-contentbg-4: #4E78DA;
+$color-contentbg-5: #A56322;
+$color-contentbg-6: #DD3822;
 
 //fonts
 $font_0: Source Sans Pro;
@@ -744,7 +744,7 @@ section {
 
 .footerLink {
   color: $red;
-  border-bottom: none;
+  border-bottom: dotted 2px;
   text-decoration: none !important;
 
   &:focus {
