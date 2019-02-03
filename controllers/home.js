@@ -15,7 +15,7 @@ exports.escapeVelocity = (req, res) => {
   console.log("userId: " + userId)
   if (userId) {
     axios
-      .get("https://5791b5f1.ngrok.io/shows/moto")
+      .get("http://ec2-18-221-100-61.us-east-2.compute.amazonaws.com:5000/shows/"+userId)
       .then(response => {
         //console.log(response.status)
         res.render('engaging-imagery', {
