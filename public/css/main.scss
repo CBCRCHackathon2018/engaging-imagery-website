@@ -5,13 +5,8 @@ $color_red_orange_approx: #ff3333;
 $white: #fff;
 $color_zircon_20_approx: rgba(244, 244, 255, 0.2);
 $color_anakiwa_approx: #9bf1ff;
-$color_anakiwa_10_approx: rgba(155, 241, 255, 0.1);
 $color_turquoise_blue_approx: #53e3fb;
-$color_viking_approx: #6fc3df;
 $color_ebony_clay_50_approx: rgba(36, 41, 67, 0.5);
-$color_lavender_purple_approx: #8d82c4;
-$color_summer_green_approx: #87c5a4;
-$color_portage_approx: #8ea9e8;
 $color_gold_sand_approx: #e7b788;
 $color_apricot_approx: #ec8d81;
 $black_15: rgba(0, 0, 0, 0.15);
@@ -19,7 +14,6 @@ $color_ebony_clay_approx: #242943;
 $color_martinique_approx: #2a2f4a;
 $color_fog_10_approx: rgba(212, 212, 255, 0.1);
 $color_iron_approx: #d8d8d8;
-$color_ebony_clay_90_approx: rgba(36, 41, 67, 0.9);
 
 // main website colour vars
 $color-main: #FFF;
@@ -53,7 +47,7 @@ $data_uri_1: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/20
 
 //@extend-elements
 //original selectors
-//html, body, div, span, h1, h3, p, a, img, strong, ul, li, article, footer, header, nav, section
+//html, body, div, span, h1, h3, p, a, img, strong, ul, li, article, footer, header, section
 %extend_1 {
   margin: 0;
   padding: 0;
@@ -154,32 +148,6 @@ ul {
   li {
     padding-left: 0.5em;
   }
-
-  &.actions {
-    display: flex;
-    cursor: default;
-    list-style: none;
-    margin-left: -1em;
-    padding-left: 0;
-
-    li {
-      padding: 0 0 0 1em;
-      vertical-align: middle;
-    }
-
-    &.stacked {
-      flex-direction: column;
-      margin-left: 0;
-
-      li {
-        padding: 1.3em 0 0 0;
-
-        &:first-child {
-          padding-top: 0;
-        }
-      }
-    }
-  }
 }
 
 li {
@@ -237,11 +205,6 @@ header {
   }
 }
 
-nav {
-  @extend %extend_1;
-  display: block;
-}
-
 section {
   @extend %extend_1;
   display: block;
@@ -269,42 +232,6 @@ section {
     }
   }
 
-  #header {
-    .logo span {
-      display: none;
-    }
-
-    nav a[href="#menu"] {
-      overflow: hidden;
-      padding-right: 0 !important;
-      text-indent: 5em;
-      white-space: nowrap;
-      width: 5em;
-
-      &:before {
-        right: 0;
-        width: inherit;
-      }
-
-      &:after {
-        right: 0;
-        width: inherit;
-      }
-
-      &:last-child {
-        &:before {
-          width: 4em;
-          right: 0;
-        }
-
-        &:after {
-          width: 4em;
-          right: 0;
-        }
-      }
-    }
-  }
-
   #banner {
     padding: 6em 0 2em;
 
@@ -315,6 +242,10 @@ section {
     >.inner .content p br {
       display: none;
     }
+  }
+
+  #header .logo span {
+    display: none;
   }
 }
 
@@ -337,14 +268,6 @@ section {
   body {
     font-size: 14pt;
   }
-
-  #header nav a[href="#menu"] {
-    padding-right: 3.75em !important;
-
-    &:last-child {
-      padding-right: 4.25em !important;
-    }
-  }
 }
 
 @media screen and(max-width: 1280px) {
@@ -361,14 +284,6 @@ section {
     height: 30vh;
     max-height: 30em;
     min-height: 20em;
-  }
-
-  #header nav a[href="#menu"] {
-    padding-right: 4em !important;
-
-    &:last-child {
-      padding-right: 4.5em !important;
-    }
   }
 }
 
@@ -393,40 +308,6 @@ section {
 
     .logo {
       padding: 0 1em;
-    }
-
-    nav {
-      a {
-        padding: 0 0.5em;
-
-        &:last-child {
-          padding-right: 1em;
-        }
-      }
-
-      a[href="#menu"] {
-        padding-right: 3.25em !important;
-
-        &:before {
-          right: 0.75em;
-        }
-
-        &:after {
-          right: 0.75em;
-        }
-
-        &:last-child {
-          padding-right: 4em !important;
-
-          &:before {
-            right: 1.5em;
-          }
-
-          &:after {
-            right: 1.5em;
-          }
-        }
-      }
     }
   }
 
@@ -499,24 +380,6 @@ section {
   opacity: 1.0;
 }
 
-.icon {
-  text-decoration: none;
-  border-bottom: none;
-  position: relative;
-  margin-right: .3125rem;
-
-  &:before {
-    font-family: $font_3;
-    font-style: normal;
-    font-weight: normal;
-    text-transform: none !important;
-  }
-
-  .emailIcon {
-    height: .8125rem;
-  }
-}
-
 .image {
   border: 0;
   display: inline-block;
@@ -524,75 +387,6 @@ section {
 
   img {
     display: block;
-  }
-}
-
-.button {
-  appearance: none;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-  background-color: transparent;
-  border: 0;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 0;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: inset 0 0 0 2px $white;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: 600;
-  height: 3.5em;
-  letter-spacing: 0.25em;
-  line-height: 3.5em;
-  padding: 0 1.75em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  &:hover {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: inset 0 0 0 2px $color_anakiwa_approx;
-    color: $color_anakiwa_approx;
-  }
-
-  &:active {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: inset 0 0 0 2px $color_anakiwa_approx;
-    color: $color_anakiwa_approx;
-    background-color: $color_anakiwa_10_approx;
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: inset 0 0 0 2px $color_turquoise_blue_approx;
-    color: $color_turquoise_blue_approx;
-  }
-
-  &.fit {
-    width: 100%;
-  }
-
-  &.primary {
-    background-color: $white;
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: none;
-    color: $white;
-
-    &:hover {
-      background-color: $color_viking_approx;
-      color: $white !important;
-    }
-
-    &:active {
-      background-color: $color_viking_approx;
-      color: $white !important;
-      background-color: $color_turquoise_blue_approx;
-    }
-  }
-
-  &:disabled {
-    pointer-events: none;
-    cursor: default;
-    opacity: 0.25;
   }
 }
 
@@ -627,7 +421,9 @@ section {
 
     h3 {
       font-size: 1.75em;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
       transform: translateY(130px);
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
       transition: transform 1s;
 
       a:hover {
@@ -635,21 +431,36 @@ section {
       }
     }
 
-    &:hover h3 {
-      transform: translateY(0px)
+    &:hover {
+      h3 {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(0px);
+      }
+
+      p {
+        opacity: 1;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(0px);
+        display: block;
+      display: block; 
+        display: block;
+      display: block; 
+        display: block;
+      display: block; 
+        display: block;
+      display: block; 
+        display: block;
+      display: block; 
+        display: block;
+      }
     }
 
     p {
-      // display: none;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
       transform: translateY(130px);
-      opacity: 0; 
+      opacity: 0;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
       transition: all 1s;
-    }
-
-    &:hover p {
-      opacity: 1;
-      transform: translateY(0px);
-      display: block; 
     }
 
     &:before {
@@ -663,6 +474,7 @@ section {
       position: absolute;
       width: 100%;
       z-index: 2;
+      opacity: 0;
     }
 
     &:after {
@@ -675,10 +487,6 @@ section {
       top: 0;
       width: 100%;
       z-index: 1;
-    }
-
-    &:before {
-      opacity: 0;
     }
 
     &:nth-child(4n - 1),
@@ -767,88 +575,6 @@ section {
 
     &:active strong {
       background-color: $color_turquoise_blue_approx;
-    }
-  }
-
-  nav {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
-    height: inherit;
-    line-height: inherit;
-
-    a {
-      border: 0;
-      display: block;
-      font-size: 0.8em;
-      height: inherit;
-      line-height: inherit;
-      padding: 0 0.75em;
-      position: relative;
-      vertical-align: middle;
-
-      &:last-child {
-        padding-right: 1.5em;
-      }
-    }
-
-    a[href="#menu"] {
-      padding-right: 3.325em !important;
-
-      &:before {
-        background-image: url($data_uri_0);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 24px 32px;
-        content: '';
-        display: block;
-        height: 100%;
-        position: absolute;
-        right: 1.5em;
-        top: 0;
-        vertical-align: middle;
-        width: 24px;
-      }
-
-      &:after {
-        background-image: url($data_uri_0);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 24px 32px;
-        content: '';
-        display: block;
-        height: 100%;
-        position: absolute;
-        right: 1.5em;
-        top: 0;
-        vertical-align: middle;
-        width: 24px;
-        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-        transition: opacity 0.2s ease-in-out;
-        background-image: url($data_uri_1);
-        opacity: 0;
-        z-index: 1;
-      }
-
-      &:last-child {
-        padding-right: 3.875em !important;
-
-        &:before {
-          right: 2em;
-        }
-
-        &:after {
-          right: 2em;
-        }
-      }
-
-      &:hover:after {
-        opacity: 1;
-      }
-
-      &:active:after {
-        opacity: 1;
-      }
     }
   }
 
@@ -1093,56 +819,5 @@ section {
     margin: 0 auto;
     max-width: 65em;
     width: calc(100% - 6em);
-  }
-}
-
-#menu {
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  background: $color_ebony_clay_90_approx;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: none;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 3em 2em;
-  position: fixed;
-  top: 0;
-  visibility: hidden;
-  width: 100%;
-  z-index: 10002;
-
-  ul {
-    margin: 0 0 1em 0;
-
-    &.links {
-      list-style: none;
-      padding: 0;
-
-      >li {
-        padding: 0;
-
-        >a:not(.button) {
-          border: 0;
-          border-top: solid 1px $color_fog_10_approx;
-          display: block;
-          font-size: 0.8em;
-          font-weight: 600;
-          letter-spacing: 0.25em;
-          line-height: 4em;
-          text-decoration: none;
-          text-transform: uppercase;
-        }
-
-        &:first-child>a:not(.button) {
-          border-top: 0 !important;
-        }
-      }
-    }
   }
 }
