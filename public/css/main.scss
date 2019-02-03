@@ -627,10 +627,29 @@ section {
 
     h3 {
       font-size: 1.75em;
+      transform: translateY(130px);
+      transition: transform 1s;
 
       a:hover {
         color: inherit !important;
       }
+    }
+
+    &:hover h3 {
+      transform: translateY(0px)
+    }
+
+    p {
+      // display: none;
+      transform: translateY(130px);
+      opacity: 0; 
+      transition: all 1s;
+    }
+
+    &:hover p {
+      opacity: 1;
+      transform: translateY(0px);
+      display: block; 
     }
 
     &:before {
@@ -641,7 +660,6 @@ section {
       display: block;
       height: 100%;
       left: 0;
-      opacity: 0.85;
       position: absolute;
       width: 100%;
       z-index: 2;
@@ -659,7 +677,7 @@ section {
       z-index: 1;
     }
 
-    &:hover:before {
+    &:before {
       opacity: 0;
     }
 
@@ -668,27 +686,33 @@ section {
       width: 60%;
     }
 
-    &:nth-child(6n - 5):before {
+    &:nth-child(6n - 5):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-2;
     }
 
-    &:nth-child(6n - 4):before {
+    &:nth-child(6n - 4):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-3;
     }
 
-    &:nth-child(6n - 3):before {
+    &:nth-child(6n - 3):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-4;
     }
 
-    &:nth-child(6n - 2):before {
+    &:nth-child(6n - 2):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-5;
     }
 
-    &:nth-child(6n - 1):before {
+    &:nth-child(6n - 1):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-6;
     }
 
-    &:nth-child(6n):before {
+    &:nth-child(6n):hover:before {
+      opacity: 0.85;
       background-color: $color-contentbg-1;
     }
   }
