@@ -13,24 +13,6 @@ head
       span .
       strong CBC Radio Canada
       span .
-    nav
-      a(href='#menu') Menu
-  // Menu
-  nav#menu
-    ul.links
-      li
-        a(href='index.html') Home
-      li
-        a(href='landing.html') Landing
-      li
-        a(href='generic.html') Generic
-      li
-        a(href='elements.html') Elements
-    ul.actions.stacked
-      li
-        a.button.primary.fit(href='#') Get Started
-      li
-        a.button.fit(href='#') Log In
   // Banner
   section#banner.major
     .inner
@@ -45,7 +27,7 @@ head
   #main
     // One
     section#one.tiles
-      each val, index in data
+      each val in data
         article
           span.image
             img(src=val.image alt='')
@@ -53,6 +35,8 @@ head
             h3
               a.link(href='landing.html')= val.title
             p= val.description
+      else 
+        p hi 
   // Footer
   footer#footer
     .footerBody.extendedFooter
@@ -99,12 +83,6 @@ head
           li.footerItem
             a.footerLink(href='https://cbchelp.cbc.ca/hc/en-ca') Help Centre
           li.footerItem
-            .icon
-              svg.emailIcon(width='20px' height='15px' viewbox='0 0 20 15' version='1.1')
-                g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
-                  g(transform='translate(-388.000000, -361.000000)' fill='#246CFF' fill-rule='nonzero')
-                    g(transform='translate(388.000000, 361.000000)')
-                      path#Shape(d='M17.9190341,0 L1.85369318,0 C0.829913885,0 0,0.839453125 0,1.875 L0,13.125 C0,14.1605469 0.829913885,15 1.85369318,15 L17.9190341,15 C18.9428134,15 19.7727273,14.1605469 19.7727273,13.125 L19.7727273,1.875 C19.7727273,0.839453125 18.9428134,0 17.9190341,0 Z M17.9190341,1.875 L17.9190341,3.46894531 C17.0531277,4.1821875 15.6726669,5.29125 12.7214715,7.62871094 C12.0710955,8.14617187 10.7827788,9.38933594 9.88636364,9.37484375 C8.99010298,9.38949219 7.70136142,8.14597656 7.05125577,7.62871094 C4.10052379,5.29160156 2.71971547,4.18230469 1.85369318,3.46894531 L1.85369318,1.875 L17.9190341,1.875 Z M1.85369318,13.125 L1.85369318,5.87492187 C2.73859996,6.58785156 3.99351163,7.58828125 5.90625266,9.10328125 C6.75033958,9.77535156 8.22854403,11.2589844 9.88636364,11.2499609 C11.5360347,11.2589844 12.9955091,9.796875 13.866127,9.10359375 C15.7788295,7.58863281 17.0340887,6.58792969 17.9190341,5.87492187 L17.9190341,13.125 L1.85369318,13.125 Z')
             a.footerLink(href='https://cbchelp.cbc.ca/hc/en-ca/requests/new') Contact Us
       .footerColumn.connect(data-test-id='footer-column-service')
         h3.footerHeading Services &amp; Info
