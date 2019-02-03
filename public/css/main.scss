@@ -2,12 +2,27 @@
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
+// main website colour vars
+$color-main: #FFF;
+$color-background: red;
+$color-icon: #242943;
+$color-icon-hover: #6fc3df;
+$color-text: black;
+
+// content colour vars 
+$color-content-text: #FFF; 
+$color-contentbg-1: #6fc3df;
+$color-contentbg-2: #8d82c4;
+$color-contentbg-3: #87c5a4;
+$color-contentbg-4: #8ea9e8;
+$color-contentbg-5: #e7b788;
+$color-contentbg-6: #ec8d81;
+
 /*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 html,
 body,
 div,
@@ -210,7 +225,7 @@ html {
 }
 
 body {
-  background: #242943;
+  background: $color-background;
 
   &.is-preload * {
     -moz-animation: none !important;
@@ -235,7 +250,7 @@ body {
     }
   }
 
-  color: #ffffff;
+  color: $color-text;
   font-family: "Source Sans Pro",
   Helvetica,
   sans-serif;
@@ -250,7 +265,7 @@ body {
 input,
 select,
 textarea {
-  color: #ffffff;
+  color: $color-text;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 17pt;
   font-weight: 300;
@@ -309,7 +324,7 @@ a {
 
 strong,
 b {
-  color: #ffffff;
+  color: $color-text;
   font-weight: 600;
 }
 
@@ -328,7 +343,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff;
+  color: $color-text;
   font-weight: 600;
   line-height: 1.65;
   margin: 0 0 1em 0;
@@ -1924,7 +1939,7 @@ header.major {
 
       &:after {
         content: '';
-        background-color: #ffffff;
+        background-color: $color-text;
         display: block;
         height: 2px;
         margin: 0.325em 0 0.5em 0;
@@ -2027,7 +2042,7 @@ form {
 }
 
 label {
-  color: #ffffff;
+  color: $color-text;
   display: block;
   font-size: 0.8em;
   font-weight: 600;
@@ -2124,7 +2139,7 @@ select {
 
   option {
     color: #ffffff;
-    background: #242943;
+    background: $color-main;
   }
 
   &:focus::-ms-value {
@@ -2214,7 +2229,7 @@ input {
     background: #ffffff;
     border-color: #9bf1ff;
     content: '\f00c';
-    color: #242943;
+    color: $color-main;
   }
 
   &[type="checkbox"]:focus+label:before {
@@ -2289,7 +2304,7 @@ input {
   &.alt:before {
     background-color: #ffffff;
     border-radius: 100%;
-    color: #242943;
+    color: $color-icon;
     display: inline-block;
     height: 2em;
     line-height: 2em;
@@ -2541,15 +2556,15 @@ ul {
 
         &.active {
           background-color: #ffffff;
-          color: #242943;
+          color: $color-main;
 
           &:hover {
-            background-color: #9bf1ff;
-            color: #242943 !important;
+            background-color: $color-icon-hover;
+            color: $color-main !important;
           }
 
           &:active {
-            background-color: #53e3fb;
+            background-color: darken($color-icon-hover, 20%);
           }
         }
       }
@@ -3071,7 +3086,7 @@ input {
   &[type="button"].primary {
     background-color: #ffffff;
     box-shadow: none;
-    color: #242943;
+    color: $color-main;
   }
 }
 
@@ -3079,7 +3094,7 @@ button.primary,
 .button.primary {
   background-color: #ffffff;
   box-shadow: none;
-  color: #242943;
+  color: $color-main;
 }
 
 input {
@@ -3087,8 +3102,8 @@ input {
 
     &:hover,
     &:active {
-      background-color: #9bf1ff;
-      color: #242943 !important;
+      background-color: $color-icon-hover;
+      color: $color-main !important;
     }
   }
 
@@ -3096,8 +3111,8 @@ input {
 
     &:hover,
     &:active {
-      background-color: #9bf1ff;
-      color: #242943 !important;
+      background-color: $color-icon-hover;
+      color: $color-main !important;
     }
   }
 
@@ -3105,8 +3120,8 @@ input {
 
     &:hover,
     &:active {
-      background-color: #9bf1ff;
-      color: #242943 !important;
+      background-color: $color-icon-hover;
+      color: $color-main !important;
     }
   }
 }
@@ -3116,7 +3131,7 @@ button.primary {
   &:hover,
   &:active {
     background-color: #9bf1ff;
-    color: #242943 !important;
+    color: $color-main !important;
   }
 }
 
@@ -3124,8 +3139,8 @@ button.primary {
 
   &:hover,
   &:active {
-    background-color: #9bf1ff;
-    color: #242943 !important;
+    background-color: $color-icon-hover;
+    color: $color-main !important;
   }
 }
 
@@ -3595,7 +3610,7 @@ button {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #2a2f4a;
+  background-color: $color-main;
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   cursor: default;
   font-weight: 600;
@@ -3876,16 +3891,17 @@ body.is-preload #header.alt {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  background-image: url("../../images/banner.jpg");
+  // background-image: url("../../images/banner.jpg");
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   padding: 6em 0 2em 0;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: $color-main; 
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
   height: 60vh;
@@ -3905,7 +3921,7 @@ body.is-preload #header.alt {
     -ms-transition-delay: 0.75s;
     transition-delay: 0.75s;
     pointer-events: none;
-    background-color: #242943;
+    background-color: $color-main;
     content: '';
     display: block;
     height: 100%;
@@ -4202,6 +4218,9 @@ body.is-preload #banner {
 }
 
 /* Footer */
+#footer {
+  background: $color-main;
+}
 
 #footer .copyright {
   font-size: 0.8em;
@@ -4232,6 +4251,159 @@ body.is-preload #banner {
     padding-left: 0;
     line-height: inherit;
   }
+}
+
+.footerRow {
+  width: 70%; 
+  margin-right: auto; 
+  margin-left: auto;
+
+  .footerColumn {
+    width: 25%; 
+    float: left;
+  }
+}
+
+.footerBody {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.extendedFooter {
+  padding-top: 30px; 
+}
+
+.extendedFooter .footerColumn {
+  -ms-flex-item-align: baseline;
+  align-self: baseline
+}
+
+.basicFooter {
+  color: #fff;
+  background-color: #000
+}
+
+.basicFooter .footerColumn {
+  -ms-flex-item-align: center;
+  align-self: center
+}
+
+.footerList {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0
+}
+
+.icon {
+  margin-right: .3125rem
+}
+
+.icon .emailIcon {
+  height: .8125rem
+}
+
+.footerColumn {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 230px;
+  flex: 1 1 230px;
+  padding: 16px
+}
+
+.footerLink {
+  color: #0550c8;
+  text-decoration: none
+}
+
+.footerLink:focus,
+.footerLink:hover {
+  text-decoration: underline
+}
+
+.footerHeading {
+  border-bottom: 1px solid #000;
+  margin-top: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.7em
+}
+
+.footerItem {
+  margin-bottom: .5rem
+}
+
+.footerItem {
+  margin-bottom: .7rem
+}
+
+.extendedLogoLink,
+.radioCanada {
+  color: #fff;
+  text-decoration: none
+}
+
+.extendedLogo {
+  font-size: 1.3rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 230px;
+  flex: 1 1 230px
+}
+
+.extendedLogo .placeholder {
+  background: none
+}
+
+.extendedLogo .placeholderImage {
+  display: none
+}
+
+.extendedLogo .largeImage {
+  position: relative;
+  width: 220px
+}
+
+.copyright {
+  -webkit-box-flex: 2;
+  -ms-flex: 2 0 230px;
+  flex: 2 0 230px;
+  font-size: .9rem
+}
+
+.radioCanada {
+  font-size: .8rem
+}
+
+.radioCanada:focus,
+.radioCanada:hover {
+  text-decoration: underline
+}
+
+.globalFooter.externalFooter {
+  height: 610px;
+  overflow: auto
+}
+
+.cbcWatch {
+  -webkit-transition: background-color .25s linear;
+  -o-transition: background-color .25s linear;
+  transition: background-color .25s linear;
+  border-bottom: 1px solid #d8d8d8;
+  text-decoration: none
+}
+
+.cbcWatch:focus,
+.cbcWatch:hover {
+  background-color: #d8d8d8;
+  text-decoration: none
 }
 
 /* Wrapper */
